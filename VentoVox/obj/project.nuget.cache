@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "kUuHz1AVxrdtnQeMNsPcjR184tO+ZJYekrffFFcOgc78w8ZWJ3MDxe4fQ6Y4oMMUTPGLkorgUoc+EfXCUGnOdA==",
+  "success": true,
+  "projectFilePath": "E:\\StartUp\\Project\\Kiosk\\VentoVox\\VentoVox.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DESKTOP\\.nuget\\packages\\materialskin.2\\2.3.1\\materialskin.2.2.3.1.nupkg.sha512"
+  ],
+  "logs": []
+}
