@@ -61,56 +61,6 @@ namespace VentoVox.Properties {
         }
         
         /// <summary>
-        ///   (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Icon _3643769_building_home_house_main_menu_start_113416 {
-            get {
-                object obj = ResourceManager.GetObject("_3643769_building_home_house_main_menu_start_113416", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Icon credit_card_hand_payment_pay_icon_143286 {
-            get {
-                object obj = ResourceManager.GetObject("credit_card_hand_payment_pay_icon_143286", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Icon food_delivery_bag_icon_179623 {
-            get {
-                object obj = ResourceManager.GetObject("food_delivery_bag_icon_179623", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Icon foodmealplaterestaurant_109684 {
-            get {
-                object obj = ResourceManager.GetObject("foodmealplaterestaurant_109684", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Icon lightbulb_1_icon_icons_com_56942 {
-            get {
-                object obj = ResourceManager.GetObject("lightbulb_1_icon_icons_com_56942", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
         internal static System.Drawing.Bitmap menu {

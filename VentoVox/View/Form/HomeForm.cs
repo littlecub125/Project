@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VentoVox.Model;
 using VentoVox.View.UserComponent;
 using static VentoVox.OrderManager;
 using static VentoVox.View.UserComponent.menuOption;
@@ -49,17 +50,18 @@ namespace VentoVox.View
             MaxVideoPanel = panelVideoList.Count;
             MaxPersonalPanel = panelPersonalInfoList.Count;
             SetFormData();
-            InitUI();
 
         }
 
-        private void InitUI()
-        {
-        }
 
         private void SetFormData()
         {
-            
+            UserAccount user = DataManager.GetInstance().GetCurrentUser();
+            tbIDInput.Text = user.strUserId;
+
+            lbFoodTicketNum.Text = user.FoodTicketNum.ToString();
+
+
         }
 
         private void btnStartOrder_Click(object sender, EventArgs e)
@@ -70,6 +72,16 @@ namespace VentoVox.View
             form.Show();
         }
 
+        private void btnLogOff_Click(object sender, EventArgs e)
+        {
+            MainForm.Getinstance().Opacity = 0.9;
+            this.Hide();
+            MainForm.Getinstance().PopUpLoginModal();
+        }
 
+        private void HomeForm_VisibleChanged(object sender, EventArgs e)
+        {
+            SetFormData();
+        }
     }
 }

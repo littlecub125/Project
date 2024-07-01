@@ -72,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\IniFile.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="View\Form\CheckOutMsgForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,14 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="View\Form\CheckOutForm.resx">
       <DependentUpon>CheckOutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +203,8 @@
     <Content Include="UI\Options\credit_card_hand_payment_pay_icon_143286.ico" />
     <Content Include="UI\Options\foodmealplaterestaurant_109684.ico" />
     <Content Include="UI\Options\food_delivery_bag_icon_179623.ico" />
+    <None Include="UI\Options\icons8-menu-64 %281%29.png" />
+    <None Include="UI\Options\icons8-menu-64.png" />
     <Content Include="UI\Options\lightbulb-1_icon-icons.com_56942.ico" />
     <None Include="UI\Options\menu.png" />
     <Content Include="UI\Profile\profile.jpg" />

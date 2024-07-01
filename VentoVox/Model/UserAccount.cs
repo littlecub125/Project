@@ -13,24 +13,15 @@ namespace VentoVox.Model
         private string _id;
         private string _password;
         private int _FoodTicketNum;
-        private static UserAccount _instance = null;
-        private AccountClassification _classification;
 
+        private AccountClassification _classification;
+        
         public enum AccountClassification
         {
             Tester,
             Student,
             Worker,
             Visiitor,
-        }
-
-        public static UserAccount GetInstance()
-        {
-            if (_instance == null)
-            {
-                _instance = new UserAccount();
-            }
-            return _instance;
         }
 
         public AccountClassification UserClassification 
@@ -87,27 +78,32 @@ namespace VentoVox.Model
 
         #region Functions
 
+        public UserAccount(string strID, string strPW, AccountClassification account)
+        {
+            strUserId = strID;
+            strUserPw = strPW;
+            UserClassification = account;
+       
+        }
 
-        public bool RequestOfflineLogin(string Id, string Password, AccountClassification Classification, int timeWait = 10000)
+        public bool RequestOfflineLogin()
         {
             bool bRes = false;
-
-            // TO Do compare offline data
+            int timeWait = 10000;
+          
+            bRes = DataManager.GetInstance().CheckLoginInfoExist(this);
 
             return bRes;
         }
-        public bool RequestOnlineLogin(string Id, string Password, AccountClassification Classification, int timeWait = 10000)
+
+        public bool RequestOnlineLogin()
         {
             bool bRes = false;
             int nTimePassed = 0;
-
+            int timeWait = 10000;
             while (bRes == false && nTimePassed < timeWait)
             {
-                if (Id == "yubi2023" && Password == "1004")
-                {
-                    bRes = true;
-                }
-                // TODO : LOGIN 작업 추가 필요
+                // TODO : Online LOGIN 작업 추가 필요
                 Thread.Sleep(100);
                 nTimePassed += 100;
             }

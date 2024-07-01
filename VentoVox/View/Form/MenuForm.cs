@@ -149,7 +149,7 @@ namespace VentoVox.View
 
             if (ListBoxCart.SelectedIndex >= 0)
             {
-                //ListBoxCart.Items.Remove(ListBoxCart.Items[itemIndex]);
+        
                 FoodSelectfromOptions(ListBoxCart.Items[itemIndex].Text, false);
             }
         }

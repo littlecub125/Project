@@ -97,7 +97,7 @@ namespace VentoVox
             if (bMenuExpand == false)
             {
                 menuContainer.Height += 5;
-                if (menuContainer.Height >= 90)
+                if (menuContainer.Height >= 100)
                 {
                     timerMenuExpand.Stop();
                     bMenuExpand = true;
@@ -188,11 +188,18 @@ namespace VentoVox
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.Opacity = 0.90d;
             PageLoginModal = LoginForm.GetInstance();
             PageLoginModal.LoginStatusChangedEvent += InitForms;
-            
+            PopUpLoginModal();
+        }
+
+        public void PopUpLoginModal()
+        {
+            this.Opacity = 0.90d;
+
+
             PageLoginModal.ShowDialog();
+            
 
             PageLoginModal.Owner = this;
             parentX = this.Location.X;
@@ -201,7 +208,7 @@ namespace VentoVox
 
         private void InitForms()
         {
-
+            InitManagers();
             this.Opacity = 1;
             PageTips = TipsForm.GetInstance();
             PageMenu = MenuForm.GetInstance();
@@ -224,12 +231,12 @@ namespace VentoVox
             PageCheckOut.MdiParent = this;
             PageCheckOut.Dock = DockStyle.Fill;
         }
+
         private void label1_Click(object sender, EventArgs e)
         {
             timerMenuExpand.Start();
 
             menuTimer.Start();
-
         }
 
 

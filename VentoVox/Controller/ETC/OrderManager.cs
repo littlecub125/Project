@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using VentoVox.Interface;
 using VentoVox.Model;
 
@@ -84,6 +85,8 @@ namespace VentoVox
             return bRes;
         }
         // Step 3 Process
+
+
         public List<FoodData> GetFinalCheckOutItems()
         {
             List<FoodData> data = Product.GetItems();
@@ -95,23 +98,31 @@ namespace VentoVox
             return data;
         }
 
-
+        
         public void CheckOut()
         {
             int nFoodTicketAvailable = CheckAvailableFoodTicket();
-
-
-
+            int nOrderingNum = OrderManager.GetInstance().Product.GetItems().Count;
+            string strMsg = string.Empty;
+            if (nFoodTicketAvailable - nOrderingNum > 0)
+            {
+                DataManager.GetInstance().SaveData(Product);
+                strMsg = $"{nFoodTicketAvailable - nOrderingNum} ticket is left";
+            }
+            else
+            {
+                strMsg = "Low Food ticket number";          
+            }
+            MessageBox.Show(strMsg);
         }
 
         private int CheckAvailableFoodTicket()
         {
             int nFoodTicketLeft = 0;
-            UserAccount User = UserAccount.GetInstance();
-            nFoodTicketLeft = User.FoodTicketNum;
+      
+            nFoodTicketLeft = DataManager.GetInstance().GetCurrentUser().FoodTicketNum;
 
             return nFoodTicketLeft;
-
         }
     }
 }

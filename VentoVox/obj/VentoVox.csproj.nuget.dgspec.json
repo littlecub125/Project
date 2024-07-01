@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\StartUp\\Project\\Kiosk\\VentoVox\\VentoVox.csproj": {}
+    "E:\\StartUp\\Project\\Kiosk\\Project\\VentoVox\\VentoVox.csproj": {}
   },
   "projects": {
-    "E:\\StartUp\\Project\\Kiosk\\VentoVox\\VentoVox.csproj": {
+    "E:\\StartUp\\Project\\Kiosk\\Project\\VentoVox\\VentoVox.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\StartUp\\Project\\Kiosk\\VentoVox\\VentoVox.csproj",
+        "projectUniqueName": "E:\\StartUp\\Project\\Kiosk\\Project\\VentoVox\\VentoVox.csproj",
         "projectName": "VentoVox",
-        "projectPath": "E:\\StartUp\\Project\\Kiosk\\VentoVox\\VentoVox.csproj",
+        "projectPath": "E:\\StartUp\\Project\\Kiosk\\Project\\VentoVox\\VentoVox.csproj",
         "packagesPath": "C:\\Users\\DESKTOP\\.nuget\\packages\\",
-        "outputPath": "E:\\StartUp\\Project\\Kiosk\\VentoVox\\obj\\",
+        "outputPath": "E:\\StartUp\\Project\\Kiosk\\Project\\VentoVox\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [

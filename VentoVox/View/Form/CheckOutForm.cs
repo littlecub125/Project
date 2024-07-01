@@ -86,7 +86,7 @@ namespace VentoVox.View
 
         private void TakeFood()
         {
-            
+            order.CheckOut();
         }
 
         private void CheckOutForm_Shown(object sender, EventArgs e)

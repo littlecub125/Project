@@ -86,7 +86,6 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::VentoVox.Properties.Resources.menu;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
@@ -119,7 +118,6 @@
             this.menuPage1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.menuPage1.Location = new System.Drawing.Point(12, 3);
             this.menuPage1.Name = "menuPage1";
-            this.menuPage1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 7);
             this.menuPage1.Size = new System.Drawing.Size(80, 65);
             this.menuPage1.TabIndex = 2;
             this.menuPage1.Text = "Home";
@@ -134,7 +132,6 @@
             this.menuPage3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.menuPage3.Location = new System.Drawing.Point(184, 3);
             this.menuPage3.Name = "menuPage3";
-            this.menuPage3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 7);
             this.menuPage3.Size = new System.Drawing.Size(80, 65);
             this.menuPage3.TabIndex = 4;
             this.menuPage3.Text = "Check Out";
@@ -149,7 +146,6 @@
             this.menuPage4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.menuPage4.Location = new System.Drawing.Point(270, 3);
             this.menuPage4.Name = "menuPage4";
-            this.menuPage4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 7);
             this.menuPage4.Size = new System.Drawing.Size(80, 65);
             this.menuPage4.TabIndex = 5;
             this.menuPage4.Text = "Tips";
@@ -164,7 +160,6 @@
             this.menuPage2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.menuPage2.Location = new System.Drawing.Point(98, 3);
             this.menuPage2.Name = "menuPage2";
-            this.menuPage2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 7);
             this.menuPage2.Size = new System.Drawing.Size(80, 65);
             this.menuPage2.TabIndex = 3;
             this.menuPage2.Text = "Menu";
@@ -182,7 +177,7 @@
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.PanelTop.ResumeLayout(false);
             this.PanelTop.PerformLayout();

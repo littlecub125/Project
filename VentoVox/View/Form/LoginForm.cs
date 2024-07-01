@@ -14,7 +14,7 @@ namespace VentoVox.View
 {
     public partial class LoginForm : Form
     {
-        UserAccount User = UserAccount.GetInstance();
+        UserAccount User;
         bool _bLoginSuccess = false;
         private static LoginForm _instance = null;
         public delegate void LoginStatusChanged();
@@ -51,14 +51,12 @@ namespace VentoVox.View
             }
         }
 
-
-
         private void CloseLoginForm(bool bLogin)
         {
             if (bLogin)
             {
                 this.DialogResult = DialogResult.OK;
-                DataManager.GetInstance().LinkUser(User);
+            
                 
                 Close();
             }
@@ -72,6 +70,7 @@ namespace VentoVox.View
         public LoginForm()
         {
             InitializeComponent();
+            InitUI();
         }
         private void InitUI()
         {
@@ -82,51 +81,39 @@ namespace VentoVox.View
             {
                 cbClassification.Items.Add(item);
             }
-
+            cbClassification.SelectedIndex = 0;
 
             picProfile.Image = Properties.Resources.profile;
             picProfile.SizeMode = PictureBoxSizeMode.Zoom;
+
         }
-        private void TryLogin()
+
+        private void RequestLogin()
         {
+            bool bRes = false;
             string strID = tbIDVerification.Text;
             string strPW = tbPWVerification.Text;
             AccountClassification type = (AccountClassification)cbClassification.SelectedIndex;
             try
             {
-                SetUserInfo(strID, strPW, type);
-            }
-            catch
-            {
-                return;
-            }
-        }
-
-        public async void SetUserInfo(string strID, string strPW, AccountClassification type)
-        {
-            bool bRes = false;
-
-
-            
-            try
-            {
                 btnLogin.Enabled = false;
-                bool bResult = User.RequestOfflineLogin(strID, strPW, type);
-                bResult = true;
+                User = new UserAccount(strID, strPW, type);
+                bRes = User.RequestOfflineLogin();
+
                 // 20240625
                 // kyb temp close 
                 /*
                 if (bResult == false)
                 {
-                    var thLogin = Task.Run(() => User.RequestOnlineLogin(strID, strPW, type));
+                    var thLogin = Task.Run(() => User.RequestOnlineLogin());
                     bRes = await thLogin;
                 }
                 else
                 {
                     bRes = true;
                 }
+              
                 */
-
             }
             catch
             {
@@ -149,9 +136,10 @@ namespace VentoVox.View
             btnLogin.Enabled = true;
         }
 
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            TryLogin();
+            RequestLogin();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)

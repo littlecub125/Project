@@ -34,6 +34,7 @@
             this.tbIDVerification = new System.Windows.Forms.TextBox();
             this.tbPWVerification = new System.Windows.Forms.TextBox();
             this.cbClassification = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.LoginBackground = new KYBController.KYBGradationRow();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
@@ -59,6 +60,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tbIDVerification, 6, 5);
             this.tableLayoutPanel1.Controls.Add(this.tbPWVerification, 6, 6);
             this.tableLayoutPanel1.Controls.Add(this.cbClassification, 6, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -114,25 +116,52 @@
             // 
             // tbIDVerification
             // 
+            this.tbIDVerification.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.tbIDVerification, 2);
+            this.tbIDVerification.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tbIDVerification.Location = new System.Drawing.Point(483, 208);
             this.tbIDVerification.Name = "tbIDVerification";
-            this.tbIDVerification.Size = new System.Drawing.Size(52, 21);
+            this.tbIDVerification.Size = new System.Drawing.Size(154, 32);
             this.tbIDVerification.TabIndex = 16;
+            this.tbIDVerification.Text = "yubi2023";
             // 
             // tbPWVerification
             // 
+            this.tbPWVerification.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.tbPWVerification, 2);
+            this.tbPWVerification.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tbPWVerification.Location = new System.Drawing.Point(483, 249);
             this.tbPWVerification.Name = "tbPWVerification";
-            this.tbPWVerification.Size = new System.Drawing.Size(52, 21);
+            this.tbPWVerification.Size = new System.Drawing.Size(154, 32);
             this.tbPWVerification.TabIndex = 17;
+            this.tbPWVerification.Text = "1234";
             // 
             // cbClassification
             // 
+            this.cbClassification.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.cbClassification, 2);
+            this.cbClassification.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbClassification.FormattingEnabled = true;
             this.cbClassification.Location = new System.Drawing.Point(483, 290);
             this.cbClassification.Name = "cbClassification";
-            this.cbClassification.Size = new System.Drawing.Size(52, 20);
+            this.cbClassification.Size = new System.Drawing.Size(154, 29);
             this.cbClassification.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label1, 4);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.label1.Location = new System.Drawing.Point(83, 41);
+            this.label1.Name = "label1";
+            this.tableLayoutPanel1.SetRowSpan(this.label1, 3);
+            this.label1.Size = new System.Drawing.Size(241, 100);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Welcome to VentoVox";
             // 
             // LoginBackground
             // 
@@ -173,5 +202,6 @@
         private System.Windows.Forms.TextBox tbIDVerification;
         private System.Windows.Forms.TextBox tbPWVerification;
         private System.Windows.Forms.ComboBox cbClassification;
+        private System.Windows.Forms.Label label1;
     }
 }
