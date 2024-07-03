@@ -16,8 +16,6 @@ namespace panelMain
     {
         int toastX, toastY; 
 
-        
-
         public ToastMsg(string msg, LogLevel level)
         {
             InitializeComponent();

@@ -197,9 +197,12 @@
     <PackageReference Include="MaterialSkin.2">
       <Version>2.3.1</Version>
     </PackageReference>
+    <PackageReference Include="System.Data.SQLite">
+      <Version>1.0.118</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="UI\Options\3643769-building-home-house-main-menu-start_113416.ico" />
+    <None Include="UI\FOOD\Hamburger.jpg" />
     <Content Include="UI\Options\credit_card_hand_payment_pay_icon_143286.ico" />
     <Content Include="UI\Options\foodmealplaterestaurant_109684.ico" />
     <Content Include="UI\Options\food_delivery_bag_icon_179623.ico" />

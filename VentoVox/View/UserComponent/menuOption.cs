@@ -35,6 +35,7 @@ namespace VentoVox.View.UserComponent
         {
             lbMenuTitle.Text = Menu.FoodName;
             picFood.Image = Menu.FoodImage;
+            
             lbFoodDescription.Items.Clear();
             lbFoodDescription.Items.Add(Menu.FoodDescription);
         }

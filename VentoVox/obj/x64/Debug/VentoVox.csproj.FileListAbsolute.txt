@@ -42,3 +42,8 @@ E:\StartUp\Project\Kiosk\Project\VentoVox\obj\x64\Debug\VentoVox.csproj.CoreComp
 E:\StartUp\Project\Kiosk\Project\VentoVox\obj\x64\Debug\VentoVox.csproj.CopyComplete
 E:\StartUp\Project\Kiosk\Project\VentoVox\obj\x64\Debug\VentoVox.exe
 E:\StartUp\Project\Kiosk\Project\VentoVox\obj\x64\Debug\VentoVox.pdb
+E:\StartUp\Project\Kiosk\Project\VentoVox\bin\x64\Debug\EntityFramework.SqlServer.dll
+E:\StartUp\Project\Kiosk\Project\VentoVox\bin\x64\Debug\EntityFramework.dll
+E:\StartUp\Project\Kiosk\Project\VentoVox\bin\x64\Debug\System.Data.SQLite.dll
+E:\StartUp\Project\Kiosk\Project\VentoVox\bin\x64\Debug\System.Data.SQLite.EF6.dll
+E:\StartUp\Project\Kiosk\Project\VentoVox\bin\x64\Debug\System.Data.SQLite.Linq.dll
