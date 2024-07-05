@@ -1,6 +1,6 @@
 # Project
  
-This project goal is building kiosk system from local companies and organizations
+This project goal is building kiosk system for local companies and organizations
 
 # Design
 
@@ -23,5 +23,13 @@ Sourcing MODBUS gateway
 Coding Web Communicate Class
 prepare Testing condition with Supabase (SaaS)
 
+
+# Completed Task List
+### Program
+SW Structure design
+1st round of UI setup
+Menu initialize
+Setting local Testing condition by presetting arbitary data
+Coding must-need App managing classes
 
 
