@@ -15,8 +15,8 @@ Singleton based instances
 Coding RS-232 Communicate Class
 Coding RS-485 Communicate Class
 Coding MODBUS Communicate Class
-Find load cell for kiosk refrigerator
-Find MODBUS gateway
+Sourcing load cell for kiosk refrigerator
+Sourcing MODBUS gateway
 
 
 ### Web related
