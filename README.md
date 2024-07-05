@@ -23,6 +23,8 @@ Sourcing MODBUS gateway <br/>
 Coding Web Communicate Class <br/> 
 prepare Testing condition with Supabase (SaaS)
 
+### Program related
+Coding SQL Server and its functions in program
 
 # Completed Task List
 ### Program
