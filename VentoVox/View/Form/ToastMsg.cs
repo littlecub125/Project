@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VentoVox;
@@ -14,8 +15,8 @@ namespace panelMain
 {
     public partial class ToastMsg : Form
     {
-        int toastX, toastY; 
-
+        int toastX, toastY;
+        LogLevel msgLevel;
         public ToastMsg(string msg, LogLevel level)
         {
             InitializeComponent();
@@ -31,7 +32,6 @@ namespace panelMain
             {
                 case LogLevel.Error:
                     ToastBorder.BackColor = Color.Red;
-                    
                     break;
                 case LogLevel.Warning:
                     ToastBorder.BackColor = Color.Yellow;
@@ -40,10 +40,11 @@ namespace panelMain
                     ToastBorder.BackColor = Color.Lime;
                     break;
             }
+      
 
 
         }
-
+     
         private void ToastMsg_Load(object sender, EventArgs e)
         {
             Position();
@@ -65,16 +66,21 @@ namespace panelMain
                     this.Close();
                 }
             }
+         
         }
 
         private void Position()
         {
- 
             toastX = MainForm.parentX + MainForm.Getinstance().Width - this.Width - 50;
-            toastY = MainForm.parentY + MainForm.Getinstance().Height - this.Height - 50;
-
+            if (msgLevel == LogLevel.Normal)
+            { 
+                toastY = MainForm.parentY + MainForm.Getinstance().Height - this.Height - 50;
+            }
+            else 
+            {
+                toastY = MainForm.parentY + MainForm.Getinstance().Height - this.Height - 150;
+            }
             this.Location = new Point(toastX, toastY);
-
         }
     }
 }

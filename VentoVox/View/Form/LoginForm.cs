@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VentoVox.ControlManager.Application;
 using VentoVox.Model;
+using static VentoVox.ControlManager.Application.LogManager;
 using static VentoVox.Model.UserAccount;
 
 namespace VentoVox.View
@@ -94,6 +96,7 @@ namespace VentoVox.View
             string strID = tbIDVerification.Text;
             string strPW = tbPWVerification.Text;
             AccountClassification type = (AccountClassification)cbClassification.SelectedIndex;
+            LogManager logController = LogManager.GetInstance();
             try
             {
                 btnLogin.Enabled = false;
@@ -125,12 +128,12 @@ namespace VentoVox.View
             if (!bLoginSuccess)
             {
                 string strMsg = "Failed to Login";
-                MessageBox.Show(strMsg);
+                logController.SetMsg(strMsg, LogLevel.Warning);
             }
             else if (bLoginSuccess)
             {
                 string strMsg = "Login Success";
-                MessageBox.Show(strMsg);
+                logController.SetMsg(strMsg, LogLevel.Normal);
             }
 
             btnLogin.Enabled = true;

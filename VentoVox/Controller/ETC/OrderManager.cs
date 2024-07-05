@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VentoVox.ControlManager.Application;
 using VentoVox.Interface;
 using VentoVox.Model;
+using static VentoVox.ControlManager.Application.LogManager;
 
 namespace VentoVox
 {
     public class OrderManager 
     {
-
         public enum OrderPage
         {
             HOME,
@@ -23,6 +24,7 @@ namespace VentoVox
         string _seqName = string.Empty;
         FinalPurchase _finalProduct = null;
         object order;
+        LogManager logController = LogManager.GetInstance();
         static OrderManager _instance = null;
         private FinalPurchase Product
         {
@@ -33,6 +35,7 @@ namespace VentoVox
         public OrderManager() 
         {
             this.Reset();
+            
         }
         public static OrderManager GetInstance()
         {
@@ -45,6 +48,7 @@ namespace VentoVox
         public void Reset() 
         { 
             this.Product = null;
+            
         }
 
 
@@ -52,6 +56,7 @@ namespace VentoVox
         public void StartBuildOrder()
         {
             Product = new FinalPurchase();
+           
         }
 
         // Step 2 Process
@@ -65,10 +70,12 @@ namespace VentoVox
 
             if (bAdd == true)
             {
+                logController.SetMsg($"{selectedFood.FoodName} is added", LogLevel.Normal); 
                 Product.FoodDataAdd(selectedFood);
             }
             else if (bAdd == false)
             {
+                logController.SetMsg($"{selectedFood.FoodName} is removed", LogLevel.Normal); ;
                 Product.FoodDataRemove(selectedFood);
             }
 
@@ -108,12 +115,14 @@ namespace VentoVox
             {
                 DataManager.GetInstance().SaveData(Product);
                 strMsg = $"{nFoodTicketAvailable - nOrderingNum} ticket is left";
+                logController.SetMsg(strMsg, LogLevel.Normal);
             }
             else
             {
-                strMsg = "Low Food ticket number";          
+                strMsg = "Low Food ticket number";
+                logController.SetMsg(strMsg, LogLevel.Warning); 
             }
-            MessageBox.Show(strMsg);
+          
         }
 
         private int CheckAvailableFoodTicket()

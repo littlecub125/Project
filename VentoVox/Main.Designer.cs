@@ -41,7 +41,6 @@
             this.menuPage3 = new System.Windows.Forms.Label();
             this.menuPage4 = new System.Windows.Forms.Label();
             this.menuPage2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuContainer.SuspendLayout();
@@ -167,22 +166,11 @@
             this.menuPage2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.menuPage2.Click += new System.EventHandler(this.menuPage2_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(304, 188);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1784, 961);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuContainer);
             this.Controls.Add(this.PanelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -210,7 +198,6 @@
         private System.Windows.Forms.Timer menuTimer;
         private KYBController.KYBGradationRow PanelTop;
         private KYBController.KYBGradationRow menuContainer;
-        private System.Windows.Forms.Button button1;
     }
 }
 

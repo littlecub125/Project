@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VentoVox.ControlManager.Application;
 using VentoVox.Interface;
 
 namespace VentoVox.ControlManager
@@ -50,17 +51,19 @@ namespace VentoVox.ControlManager
 
 
 
-        public string GetSeqName()
+        public string GetControllerName()
         {
             return _seqName;
         }
 
-        public void SetSeqName(string seqName)
-        {
-            _seqName = seqName;
-        }
+
 
         public List<(string, bool)> GetSequenceFlag()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void setControllerName()
         {
             throw new NotImplementedException();
         }

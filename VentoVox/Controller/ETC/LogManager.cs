@@ -1,6 +1,7 @@
 ﻿using panelMain;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -11,7 +12,7 @@ using VentoVox.Interface;
 
 namespace VentoVox.ControlManager.Application
 {
-    public class LogManager 
+    public class LogManager : INotifyPropertyChanged
     {
         public enum LogLevel
         {
@@ -19,28 +20,29 @@ namespace VentoVox.ControlManager.Application
             Warning,
             Error,
 
-
         }
-
+        private string _WarningMessage = string.Empty;
+        private string _ErrorMessage = string.Empty;
+        private string _NormalMessage = string.Empty;
+        public event PropertyChangedEventHandler PropertyChanged;
         string strLogFileName = string.Empty;
         string sStartUpPath = string.Empty;
 
         private static LogManager _instance;
 
-        private Queue<(string, LogLevel)> LogMsg = new Queue<(string, LogLevel)>();
+        public Queue<(string, LogLevel)> LogMsgQueue = new Queue<(string, LogLevel)>();
 
 
-        public void SetToastMsg(string msg, LogLevel level)
+        public static LogManager GetInstance()
         {
-            ToastMsg toastMsg = new ToastMsg(msg, level);
-
-            string strLog = DateTime.Now + " " + msg; 
-            (string, LogLevel) item = (strLog, level);
-
-            LogMsg.Enqueue(item);
-
-            toastMsg.Show();
+            if (_instance == null)
+            {
+                _instance = new LogManager();
+            }
+            return _instance;
         }
+
+        
 
         public void SaveLogMsg()
         {
@@ -62,11 +64,11 @@ namespace VentoVox.ControlManager.Application
             else
                 sw = File.AppendText(strLogFileName);
 
-            for (int i = 0; i < LogMsg.Count; i++)
+            for (int i = 0; i < LogMsgQueue.Count; i++)
             {
                 (string, LogLevel) data;
 
-                data = LogMsg.Dequeue();
+                data = LogMsgQueue.Dequeue();
              
                 string sMsg = string.Format("{0} {1}", data.Item1, data.Item2);
 
@@ -75,6 +77,73 @@ namespace VentoVox.ControlManager.Application
 
             sw.Close();
             sw.Dispose();
+        }
+
+        
+        public string ErrorMessage
+        {
+            get
+            {
+                return _ErrorMessage;
+            }
+            set
+            {
+                if (_ErrorMessage != value)
+                {
+                    _ErrorMessage = value;
+                    OnPropertyChanged("AlaramMessage");
+                }
+            }
+        }
+
+        public string WarningMessage
+        {
+            get
+            {
+                return _WarningMessage;
+            }
+            set
+            {
+                _WarningMessage = value;
+                OnPropertyChanged("LogMessage");
+            }
+        }
+   
+        public string NormalMessage
+        {
+            get
+            {
+                return _NormalMessage;
+            }
+            set
+            {
+                _NormalMessage = value;
+                OnPropertyChanged("NormalMessage");
+            }
+        }
+
+        public void SetMsg(string msg, LogLevel level)
+        {
+            switch (level)
+            {
+                case LogLevel.Error:
+                    ErrorMessage = msg;
+                    break;
+
+                case LogLevel.Warning:
+                    WarningMessage = msg;
+                    break;
+                case LogLevel.Normal:
+                    NormalMessage = msg;    
+                    break;
+                default:
+                    break;
+            }
+        }
+       
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
 

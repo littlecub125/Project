@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VentoVox.ControlManager.Application;
 using VentoVox.Model;
 
 namespace VentoVox.Interface
@@ -28,14 +29,15 @@ namespace VentoVox.Interface
 
     public interface IControlManager
     {
-        
-        void SetSeqName(string seqName);
-        string GetSeqName();
+        string GetControllerName();
+
+        void setControllerName();
         void Run(ArgsData data);
         void Stop();
 
         void Terminate();
 
         List<(string, bool)> GetSequenceFlag();
+  
     }
 }

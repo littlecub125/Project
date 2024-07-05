@@ -203,12 +203,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="UI\FOOD\Hamburger.jpg" />
-    <Content Include="UI\Options\credit_card_hand_payment_pay_icon_143286.ico" />
-    <Content Include="UI\Options\foodmealplaterestaurant_109684.ico" />
-    <Content Include="UI\Options\food_delivery_bag_icon_179623.ico" />
-    <None Include="UI\Options\icons8-menu-64 %281%29.png" />
-    <None Include="UI\Options\icons8-menu-64.png" />
-    <Content Include="UI\Options\lightbulb-1_icon-icons.com_56942.ico" />
     <None Include="UI\Options\menu.png" />
     <Content Include="UI\Profile\profile.jpg" />
     <Content Include="UI\Video\video.gif" />

@@ -5,7 +5,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 using VentoVox.Interface;
+using static VentoVox.ControlManager.Application.LogManager;
 
 namespace VentoVox.Seq
 {
@@ -20,26 +22,27 @@ namespace VentoVox.Seq
         Queue<ArgsData> seqQueue = new Queue<ArgsData>();
 
 
-        IControlManager seqManager = null;
+        IControlManager seqControl = null;
+
+        public void SetMessage()
+        {
+
+        }
 
         public MasterController(IControlManager seq)
         {
-            seqManager = seq;
+            seqControl = seq;
         }
         public void StopSeq()
         {
             seqQueue.Clear();
-            seqManager.Stop();
+            seqControl.Stop();
         }
         public string GetName()
         {
-            return seqManager.GetSeqName();
+            return seqControl.GetControllerName();
         }
 
-        public void SetName(string strName)
-        {
-            seqManager.SetSeqName(strName);
-        }
 
         public bool SetCmd(ArgsData args)
         {
@@ -48,7 +51,7 @@ namespace VentoVox.Seq
         }
         public List<(string, bool)> GetSequenceFlag()
         {
-            return seqManager.GetSequenceFlag();
+            return seqControl.GetSequenceFlag();
         }
         public void StartLoop()
         {
@@ -72,7 +75,7 @@ namespace VentoVox.Seq
 
         public void TerminateLoop()
         {
-            seqManager.Terminate();
+            seqControl.Terminate();
             while (IsSeqRunning())
             {
                 Thread.Sleep(10);
@@ -90,7 +93,7 @@ namespace VentoVox.Seq
                 {
                     ArgsData args = seqQueue.Dequeue();
                     nCurrentSeqNum = args.seqNum;
-                    seqManager.Run(args);
+                    seqControl.Run(args);
                     args.Dispose();
                     Thread.Sleep(10);
                 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using panelMain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,12 +7,14 @@ using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VentoVox.ControlManager.Application;
 using VentoVox.Interface;
 using VentoVox.Master;
 using VentoVox.View;
+using static VentoVox.ControlManager.Application.LogManager;
 using static VentoVox.MainForm;
 using static VentoVox.Master.BaseManager;
 
@@ -37,7 +40,7 @@ namespace VentoVox
         LoginForm PageLoginModal;
 
         public static MainForm _instance;
-
+        LogManager logManager;
         public static MainForm Getinstance()
         {
             if ( _instance == null )
@@ -54,13 +57,15 @@ namespace VentoVox
         {
             InitializeComponent();
             initUI();
+
+
         }
         private void initUI()
         {
             menuList = new List<Label>() { menuPage1 , menuPage2, menuPage3, menuPage4 };
             AttachMenuHandler(menuList);
-            
         }
+
         private void AttachMenuHandler(List<Label> menulist)
         {
             foreach (Label label in menulist)
@@ -190,6 +195,10 @@ namespace VentoVox
         {
             PageLoginModal = LoginForm.GetInstance();
             PageLoginModal.LoginStatusChangedEvent += InitForms;
+
+            logManager = LogManager.GetInstance();
+            logManager.PropertyChanged += OnPropertyChanged;
+            
             PopUpLoginModal();
         }
 
@@ -251,10 +260,7 @@ namespace VentoVox
 
 
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            data.CreateSQL();
-        }
+
 
         private void InitManagers()
         {
@@ -263,8 +269,7 @@ namespace VentoVox
 
             try
             {
-                control.AppMaster[(int)AppThread.WebManager].SetName("Web Manager");
-                control.HwMaster[(int)HWThread.HWManager].SetName("HW Manager");
+      
                 data = DataManager.GetInstance();
                 order = OrderManager.GetInstance();
             }
@@ -274,11 +279,40 @@ namespace VentoVox
             }
         }
 
-
-
-
         #endregion
 
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+  
+            if (e.PropertyName == nameof(logManager.WarningMessage))
+            {
+                SetToastMsg(logManager.WarningMessage, LogLevel.Warning);
+            }
+            else if (e.PropertyName == nameof(logManager.ErrorMessage))
+            {
 
+                SetToastMsg(logManager.ErrorMessage, LogLevel.Error);
+            }
+            else if (e.PropertyName == nameof(logManager.NormalMessage))
+            { 
+                SetToastMsg(logManager.NormalMessage, LogLevel.Normal);
+       
+            }
+
+        }
+
+        public void SetToastMsg(string msg, LogLevel level)
+        {
+                ToastMsg toastMsg = new ToastMsg(msg, level);
+
+                string strLog = DateTime.Now + " " + msg;
+                (string, LogLevel) item = (strLog, level);
+
+                logManager.LogMsgQueue.Enqueue(item);
+
+                toastMsg.Show();
+                toastMsg.BringToFront();
+                toastMsg.TopMost = true;
+        }
     }
 }
