@@ -4,7 +4,7 @@ This project goal is building kiosk system for local companies and organizations
 
 # Design
 
-Singleton based instances
+Singleton based instances <br/> 
 ![image](https://github.com/user-attachments/assets/9f95ea7a-ac72-49da-925c-2126e8291ea4)
 ![image](https://github.com/user-attachments/assets/608e7b52-1762-4395-8e96-67928a87269b)
 ![image](https://github.com/user-attachments/assets/f258ab80-12aa-452d-97a9-8309ae999c9d)
