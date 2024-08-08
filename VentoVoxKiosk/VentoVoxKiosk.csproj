@@ -79,7 +79,7 @@
     <Compile Include="Controller\Ext\AppThread\WebManager.cs" />
     <Compile Include="Controller\Ext\ExtController.cs" />
     <Compile Include="Controller\Ext\HwThread\HWControlManager.cs" />
-    <Compile Include="Controller\MainManager.cs" />
+    <Compile Include="Controller\SeqManager.cs" />
     <Compile Include="Interface\IMasterManager.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

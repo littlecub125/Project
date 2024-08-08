@@ -10,15 +10,15 @@ using VentoVox.Seq;
 namespace VentoVox.Master
 {
     #region HW & Web Manager
-    public partial class MainManager
+    public partial class SeqManager
     {
-        private static MainManager _instance = null;
+        private static SeqManager _instance = null;
 
-        public static MainManager GetInstance()
+        public static SeqManager GetInstance()
         {
             if (_instance == null)
             {
-                _instance = new MainManager();
+                _instance = new SeqManager();
             }
             return _instance;
         }
@@ -102,7 +102,7 @@ namespace VentoVox.Master
 
 
     #region Data & Log & OrderManager
-    public partial class MainManager
+    public partial class SeqManager
     {
 
 
