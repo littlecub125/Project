@@ -5,9 +5,11 @@ This project goal is building kiosk system for local companies and organizations
 # Design
 
 Singleton based instances
+![image](https://github.com/user-attachments/assets/9f95ea7a-ac72-49da-925c-2126e8291ea4)
+![image](https://github.com/user-attachments/assets/608e7b52-1762-4395-8e96-67928a87269b)
+![image](https://github.com/user-attachments/assets/f258ab80-12aa-452d-97a9-8309ae999c9d)
 
-![image](https://github.com/littlecub125/Project/assets/107022760/d3b62009-2aa3-4f6d-b4c6-03c494d2b2ea)
-![image](https://github.com/littlecub125/Project/assets/107022760/0ef90d29-532d-41ee-8ce1-f673679e0336)
+
 
 # Planned Task List
 
@@ -17,6 +19,7 @@ Coding RS-485 Communicate Class <br/>
 Coding MODBUS Communicate Class <br/> 
 Sourcing load cell for kiosk refrigerator <br/> 
 Sourcing MODBUS gateway <br/> 
+Sourcing NFC reader <br/> 
 
 
 ### Web related
