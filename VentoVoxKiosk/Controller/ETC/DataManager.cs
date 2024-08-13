@@ -13,12 +13,20 @@ using static VentoVox.Model.UserAccount;
 
 using System.IO;
 using System.Data.SQLite;
+using VentoVoxKiosk.Controller.Ext.AppThread;
 
-namespace VentoVox
+namespace VentoVoxKiosk.Controller.ETC
 {
     public class DataManager 
     {
         #region Param
+        public enum VerifyOption
+        {
+            QR,
+            ID,
+        }
+
+        private IDVerifyManager Verfier = new IDVerifyManager();
         private List<FoodData> foodOffered = new List<FoodData>();
         private List<UserAccount> userAllowed = new List<UserAccount>();
         private SQLIte SQLController = new SQLIte();
@@ -52,7 +60,7 @@ namespace VentoVox
             return foodOffered;
         }
 
-        public bool CheckLoginInfoExist(UserAccount user)
+        public bool CheckLoginInfoExist(UserAccount user, VerifyOption option)
         {
             bool bFound = false;
 

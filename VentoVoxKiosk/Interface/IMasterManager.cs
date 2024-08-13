@@ -16,7 +16,7 @@ namespace VentoVox.Interface
         public double[] doubleValue;
         public string stringValue;
         public FoodData MenuData;
-    
+        
 
         public void Dispose()
         {

@@ -76,6 +76,7 @@
     <Compile Include="Controller\ETC\DataManager.cs" />
     <Compile Include="Controller\ETC\LogManager.cs" />
     <Compile Include="Controller\ETC\OrderManager.cs" />
+    <Compile Include="Controller\Ext\AppThread\IDManager.cs" />
     <Compile Include="Controller\Ext\AppThread\WebManager.cs" />
     <Compile Include="Controller\Ext\ExtController.cs" />
     <Compile Include="Controller\Ext\HwThread\HWControlManager.cs" />
@@ -200,6 +201,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="OpenCvSharpExtern.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="UI\FOOD\friedRice.jpg" />
     <Content Include="UI\FOOD\Hamburger.jpg" />
     <Content Include="UI\FOOD\Pasta.jpg" />
@@ -217,6 +221,12 @@
     <Folder Include="Controller\Ext\HwThread\RS-485\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="OpenCvSharp4">
+      <Version>4.10.0.20240616</Version>
+    </PackageReference>
     <PackageReference Include="System.Data.SQLite">
       <Version>1.0.118</Version>
     </PackageReference>

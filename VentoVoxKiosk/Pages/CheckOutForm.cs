@@ -12,6 +12,8 @@ using VentoVox;
 using VentoVox.Model;
 using static VentoVoxKiosk.Pages.UserComponent.Menu_Comp;
 using VentoVoxKiosk.Pages.UserComponent;
+using VentoVox.ControlManager.Application;
+using static VentoVox.ControlManager.Application.LogManager;
 
 namespace VentoVoxKiosk.Pages
 {
@@ -91,6 +93,11 @@ namespace VentoVoxKiosk.Pages
 
             FinalPurchase purchaseInfo =  order.GetFinalPurchasingOrder();
 
+            if (purchaseInfo == null)
+            {
+                LogManager.GetInstance().SetMsg("No Food Selected", LogLevel.Normal);
+                return;
+            }
             for (int i=0; i< purchaseInfo.GetItems().Count; i++)
             {
                 Menu_Comp item = new Menu_Comp();
