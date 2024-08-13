@@ -14,6 +14,8 @@ namespace VentoVox.ControlManager
         {
 
         }
+
+
         private string _seqName = string.Empty;
 
 

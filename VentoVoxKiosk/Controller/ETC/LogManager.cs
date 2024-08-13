@@ -16,10 +16,10 @@ namespace VentoVox.ControlManager.Application
     {
         public enum LogLevel
         {
+            Web,
             Normal,
             Warning,
             Error,
-
         }
         private string _WarningMessage = string.Empty;
         private string _ErrorMessage = string.Empty;
