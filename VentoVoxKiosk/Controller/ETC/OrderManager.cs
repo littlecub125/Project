@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using VentoVox.ControlManager.Application;
 using VentoVox.Interface;
 using VentoVox.Model;
+using VentoVoxKiosk.Controller.ETC;
 using static VentoVox.ControlManager.Application.LogManager;
 
 namespace VentoVox

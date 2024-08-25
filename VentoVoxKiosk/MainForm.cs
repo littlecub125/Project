@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VentoVox;
 using VentoVox.ControlManager.Application;
+using VentoVoxKiosk.Controller.ETC;
 using VentoVoxKiosk.Pages;
 using static VentoVox.ControlManager.Application.LogManager;
 

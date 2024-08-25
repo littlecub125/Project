@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VentoVox;
 using VentoVox.Model;
+using VentoVoxKiosk.Controller.ETC;
 using VentoVoxKiosk.Pages.UserComponent;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 using static VentoVoxKiosk.Pages.UserComponent.Menu_Comp;

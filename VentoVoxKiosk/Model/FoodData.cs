@@ -105,7 +105,6 @@ namespace VentoVox.Model
         }
         #endregion
 
-        #region Functions
         public FoodData(string name, Image image, string description, int quantity, DateTime dateTime)
         {
             FoodName = name;
@@ -122,7 +121,5 @@ namespace VentoVox.Model
                 ExpiredFood = true;
             }
         }
-
-        #endregion
     }
 }

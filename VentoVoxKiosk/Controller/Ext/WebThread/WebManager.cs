@@ -25,13 +25,13 @@ namespace VentoVox
         }
 
         private HttpClient WebClient = null;
-        const string APIUrl = "";
+        const string APIUrl = "http://13.209.103.55:8080/api/items";
         string _seqName = string.Empty;
 
         public static IControlManager CreateManager()
         {
             WebManager seq = new WebManager();
-    ;
+    ;       
             return seq;
         }
         public WebManager()
@@ -42,6 +42,7 @@ namespace VentoVox
         private void InitClient()
         {
             WebClient = new HttpClient();
+            
         }
 
 
@@ -112,6 +113,8 @@ namespace VentoVox
                 LogManager.GetInstance().SetMsg(ex.Message, LogLevel.Error);
             }
         }
+
+        
 
         public void Stop()
         {

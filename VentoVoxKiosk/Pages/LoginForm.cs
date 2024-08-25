@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VentoVoxKiosk.Controller.ETC;
 
 namespace VentoVoxKiosk.Pages
 {
@@ -26,6 +27,11 @@ namespace VentoVoxKiosk.Pages
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnQRCheck_Click(object sender, EventArgs e)
+        {
+            DataManager.GetInstance().CheckQRLoginInfoExist();
         }
     }
 }

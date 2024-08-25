@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using VentoVoxKiosk.Controller.ETC;
 
 namespace VentoVox.Model
 {
@@ -76,49 +77,13 @@ namespace VentoVox.Model
         #endregion
 
 
-        #region Functions
-
         public UserAccount(string strID, string strPW, AccountClassification account)
         {
             strUserId = strID;
             strUserPw = strPW;
             UserClassification = account;
-       
+
         }
-
-        public bool RequestOfflineLogin()
-        {
-            bool bRes = false;
-            int timeWait = 10000;
-          
-            bRes = DataManager.GetInstance().CheckLoginInfoExist(this);
-
-            return bRes;
-        }
-
-        public bool RequestOnlineLogin()
-        {
-            bool bRes = false;
-            int nTimePassed = 0;
-            int timeWait = 10000;
-            while (bRes == false && nTimePassed < timeWait)
-            {
-                // TODO : Online LOGIN 작업 추가 필요
-                Thread.Sleep(100);
-                nTimePassed += 100;
-            }
-
-            return bRes;
-        }
-
-        public bool CurrentLoginStatus()
-        {
-            bool bRes = false;
-
-            return bRes;
-        }
-
-        #endregion
 
 
 

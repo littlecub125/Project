@@ -35,6 +35,7 @@
             this.tbIDVerification = new System.Windows.Forms.TextBox();
             this.btnLoginShow = new MyUserControl.KYBButton();
             this.btnClose = new MyUserControl.KYBButton();
+            this.btnQRCheck = new MyUserControl.KYBButton();
             this.kybGradationRow1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +65,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.Controls.Add(this.btnQRCheck, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbPWVerification, 4, 5);
             this.tableLayoutPanel1.Controls.Add(this.tbIDVerification, 4, 4);
@@ -162,6 +164,27 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnQRCheck
+            // 
+            this.btnQRCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnQRCheck.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnQRCheck.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.btnQRCheck.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnQRCheck.BorderRadius = 10;
+            this.btnQRCheck.BorderSize = 0;
+            this.btnQRCheck.FlatAppearance.BorderSize = 0;
+            this.btnQRCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQRCheck.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnQRCheck.ForeColor = System.Drawing.Color.White;
+            this.btnQRCheck.Location = new System.Drawing.Point(3, 406);
+            this.btnQRCheck.Name = "btnQRCheck";
+            this.btnQRCheck.Size = new System.Drawing.Size(94, 30);
+            this.btnQRCheck.TabIndex = 34;
+            this.btnQRCheck.Text = "QR";
+            this.btnQRCheck.TextColor = System.Drawing.Color.White;
+            this.btnQRCheck.UseVisualStyleBackColor = false;
+            this.btnQRCheck.Click += new System.EventHandler(this.btnQRCheck_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -188,5 +211,6 @@
         private System.Windows.Forms.TextBox tbIDVerification;
         private MyUserControl.KYBButton btnLoginShow;
         private MyUserControl.KYBButton btnClose;
+        private MyUserControl.KYBButton btnQRCheck;
     }
 }

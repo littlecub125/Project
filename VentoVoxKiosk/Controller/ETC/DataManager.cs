@@ -59,8 +59,16 @@ namespace VentoVoxKiosk.Controller.ETC
         {
             return foodOffered;
         }
+        public bool CheckQRLoginInfoExist()
+        {
+            bool bFound = false;
 
-        public bool CheckLoginInfoExist(UserAccount user, VerifyOption option)
+            Verfier.QRCheck();
+
+
+            return bFound;
+        }
+        public bool CheckLoginInfoExist(UserAccount user)
         {
             bool bFound = false;
 

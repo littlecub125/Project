@@ -76,8 +76,8 @@
     <Compile Include="Controller\ETC\DataManager.cs" />
     <Compile Include="Controller\ETC\LogManager.cs" />
     <Compile Include="Controller\ETC\OrderManager.cs" />
-    <Compile Include="Controller\Ext\AppThread\IDManager.cs" />
-    <Compile Include="Controller\Ext\AppThread\WebManager.cs" />
+    <Compile Include="Controller\Ext\WebThread\IDVerifyManager.cs" />
+    <Compile Include="Controller\Ext\WebThread\WebManager.cs" />
     <Compile Include="Controller\Ext\ExtController.cs" />
     <Compile Include="Controller\Ext\HwThread\HWControlManager.cs" />
     <Compile Include="Controller\SeqManager.cs" />

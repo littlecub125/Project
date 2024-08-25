@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VentoVox.Master;
 using VentoVox;
+using VentoVoxKiosk.Controller.ETC;
+using static VentoVox.Master.SeqManager;
+using VentoVox.Interface;
+using static VentoVox.WebManager;
 
 namespace VentoVoxKiosk.Pages
 {
@@ -54,19 +58,12 @@ namespace VentoVoxKiosk.Pages
 
             }
 
-
-
             this.Opacity = 1d;
             this.MdiParent.Opacity = 2d;
-
-
         }
 
         private void btnStartOrder_Click(object sender, EventArgs e)
         {
-            InitManagers();
-
-
             MenuForm form = MenuForm.GetInstance();
             form.Activate();
             form.Show();
@@ -91,6 +88,11 @@ namespace VentoVoxKiosk.Pages
             {
 
             }
+        }
+
+        private void HomeForm_Load(object sender, EventArgs e)
+        {
+            InitManagers();
         }
     }
 }

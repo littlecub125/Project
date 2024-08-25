@@ -196,6 +196,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HomeForm";
             this.Text = "HomeForm";
+            this.Load += new System.EventHandler(this.HomeForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.kybGradationRow1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

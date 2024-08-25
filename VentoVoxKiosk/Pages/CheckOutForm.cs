@@ -14,6 +14,11 @@ using static VentoVoxKiosk.Pages.UserComponent.Menu_Comp;
 using VentoVoxKiosk.Pages.UserComponent;
 using VentoVox.ControlManager.Application;
 using static VentoVox.ControlManager.Application.LogManager;
+using VentoVoxKiosk.Controller.ETC;
+using static VentoVox.Master.SeqManager;
+using static VentoVox.WebManager;
+using VentoVox.Interface;
+using VentoVox.Master;
 
 namespace VentoVoxKiosk.Pages
 {
@@ -158,8 +163,38 @@ namespace VentoVoxKiosk.Pages
                 
             }
 
+        }
+
+        private void btnQrVerify_Click(object sender, EventArgs e)
+        {
+            DataManager.GetInstance().CheckQRLoginInfoExist();
+        }
+
+        private void btnLoginID_Click(object sender, EventArgs e)
+        {
+            PopUpLoginModal();
+        }
+
+        private void PopUpLoginModal()
+        {
+            this.Opacity = 0.90d;
+            this.MdiParent.Opacity = 0.90d;
+            LoginForm PageLoginModal = new LoginForm();
+            DialogResult result = PageLoginModal.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+
+            }
+            else
+            {
+
+            }
 
 
+
+            this.Opacity = 1d;
+            this.MdiParent.Opacity = 2d;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using OpenCvSharp;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,8 +59,11 @@ namespace VentoVoxKiosk.Controller.Ext.AppThread
                             Console.WriteLine("디코딩된 텍스트: " + decodedText);
 
                             Cv2.WaitKey(0); // 키 입력을 기다립니다.
+                            Cv2.DestroyAllWindows();
                             break; // 디코딩이 완료되면 루프를 종료합니다.
                         }
+
+
                     }
 
                     // 캡처된 프레임을 화면에 표시하여 실시간으로 확인할 수 있습니다.
@@ -68,8 +72,10 @@ namespace VentoVoxKiosk.Controller.Ext.AppThread
                     // 'q' 키를 누르면 루프를 종료합니다.
                     if (Cv2.WaitKey(1) == 'q')
                     {
+                        Cv2.DestroyAllWindows();
                         break;
                     }
+          
                 }
                 
             }

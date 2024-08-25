@@ -14,8 +14,8 @@ namespace VentoVox.Seq
     public class ExtController
     {
         const int SequenceNone = -1;
-        Thread thHwSeq = null;
-        Thread thAppSeq = null;
+        Thread thSeq = null;
+      
         bool bLoop = false;
         int nCurrentSeqNum = 0;
    
@@ -24,14 +24,12 @@ namespace VentoVox.Seq
 
         IControlManager seqControl = null;
 
-        public void SetMessage()
-        {
-
-        }
+  
 
         public ExtController(IControlManager seq)
         {
             seqControl = seq;
+            StartLoop();
         }
         public void StopSeq()
         {
@@ -56,8 +54,8 @@ namespace VentoVox.Seq
         public void StartLoop()
         {
             bLoop = true;
-            thHwSeq = new Thread(SequenceLoop);
-            thHwSeq.Start();
+            thSeq = new Thread(SequenceLoop);
+            thSeq.Start();
         }
  
         public bool IsSeqRunning()
@@ -78,8 +76,8 @@ namespace VentoVox.Seq
                 Thread.Sleep(10);
             }
             bLoop = false;
-            thHwSeq.Join();
-            thHwSeq = null;
+            thSeq.Join();
+            thSeq = null;
         }
 
         private void SequenceLoop()

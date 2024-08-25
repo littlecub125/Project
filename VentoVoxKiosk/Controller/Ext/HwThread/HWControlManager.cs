@@ -37,7 +37,11 @@ namespace VentoVox.ControlManager
 
         public void Run(ArgsData data)
         {
-            throw new NotImplementedException();
+            switch (data.seqNum)
+            {
+                default:
+                    break;
+            }
         }
 
         public void Stop()
